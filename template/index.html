@@ -1,0 +1,31 @@
+{% comment %} {% extends 'headerPage.html' %} {% endcomment %}
+{% block content %}
+        {% comment %} <div class="header"> {% endcomment %}
+        <div style="background:black">
+        <center><h1 style="color:yellow">Building Detection Using Image Segmentation</h1></center>
+        <form method="post" enctype="multipart/form-data" action="realImage">
+        <center><input name="filePath" type="file" style="color:yellow"><input type="submit" value="Submit"></center>
+        </div>
+        {% comment %} </div> {% endcomment %}
+        {% comment %} <center><h4>Upload Image for Predicting</h4></center> {% endcomment %}   
+            {% comment %} <form method="post" enctype="multipart/form-data" action="predictImage"> {% endcomment %}
+            {% csrf_token %}
+            {% comment %} <div class="col-md-4 col-sm-4"> {% endcomment %}
+            {% comment %} <label for="fname"><h3>Upload Image File Here:</h3></label> {% endcomment %}
+        <div class="abc" style="background:black; float:left; height: 100vh; width: 49.8%;border:1px solid yellow;">
+            {% comment %} </div> {% endcomment %}
+            <center><h1 style="color:yellow">Actual Image</h1><center>
+            {% comment %} <input name="filePath" type="file"><input type="submit" value="Submit" > {% endcomment %}
+            <br><br>
+            {% comment %} <center><input name="filePath" type="file"><input type="submit" value="Submit"></center> {% endcomment %}
+            <img src={{filePathName}} alt='image_number' height="400" width="60%">
+        </div>
+        <div class="def" style="background:black; float:right; height: 100vh; width: 49.8%;border:1px solid yellow;">
+            {% comment %} </div> {% endcomment %}
+            <center><h1 style="color:yellow">Predicted Image</h1><center>
+            {% comment %} <input name="filePath" type="file"><input type="submit" value="Submit" > {% endcomment %}
+            <br><br>
+            {% comment %} <center><input name="filePath" type="file"><input type="submit" value="Submit"></center> {% endcomment %}
+            <img src={{rr}} alt='image_number' height="400" width="60%" position:absolute; class="fishes"> 
+        </div>
+{% endblock %}
